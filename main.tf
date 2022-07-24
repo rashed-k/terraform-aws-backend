@@ -1,6 +1,6 @@
 terraform { 
 
-    required providers {
+    required_providers {
         aws = {
             source      = "hashicorp/aws"
             version     = "~> 3.72" 
@@ -31,7 +31,7 @@ resource "aws_s3_bucket" "terraform_state" {
     }
 }
 
-resource "aws_dyanmodb_table" "terraform_locks" {
+resource "aws_dynamodb_table" "terraform_locks" {
     name            = "terraform-state-lockingg"
     billing_mode    = "PAY_PER_REQUEST"
     hash_key        = "LockID"
